@@ -1,0 +1,1 @@
+const ComponentName = () => null; export default ComponentName;
