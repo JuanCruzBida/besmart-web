@@ -61,15 +61,11 @@ position: absolute;
         font-size: 18px;
         text-align: center;
         display: inline-block;
-        color: var(--tp-common-black);
-        border: 1px solid var(--tp-common-black);
+        color: var(--tp-common-white);
+        border: 1px solid var(--tp-common-white);
         transition: .3s;
         margin-left: 15px;
         border-radius: 50%;
-        &:hover{
-            background-color: var(--tp-common-black);
-            color: var(--tp-common-white);
-        }
     }
     &-menu{
         & > nav{

@@ -75,3 +75,26 @@
         padding-bottom: 25px;
     }
 }
+
+
+
+@media #{$sm} { 
+
+
+  .tp-project-3-area .tp-project-3-btn {
+    font-size: 10px;
+    padding: 12px 20px; 
+  }
+
+ 
+  .tp-sd-hero-title {
+    font-size: 45px !important;
+    line-height: 1.1;
+  }
+
+  .tp-contact-area .tp-section-title {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+}

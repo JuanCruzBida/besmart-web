@@ -95,7 +95,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                         className="tp-btn-project-sm"
                         href={item.link} // <-- MODIFICADO (usa el link de la data)
                       >
-                        {item.btn_text || item.meta} {/* <-- MODIFICADO (usa btn_text o, si no existe, usa meta) */}
+                        {item.btn_text} {/* <-- MODIFICADO (usa btn_text o, si no existe, usa meta) */}
                       </Link>
                     </div>
                     <div className="tp-project-3-border color-1 text-center">

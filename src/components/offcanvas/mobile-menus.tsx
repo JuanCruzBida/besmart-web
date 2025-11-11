@@ -39,10 +39,7 @@ export default function MobileMenus() {
                     : ""
                 } ${menu.home_menus ? "dropdown-opened" : ""}`}
               >
-                {/* --- INICIO DE LA MODIFICACIÓN --- */}
-                {/* Si SÍ tiene submenú, mostramos el botón de acordeón (<a>).
-                  Si NO tiene submenú, mostramos un link real (<Link>).
-                */}
+
                 {hasSubmenu ? (
                   <a
                     className="pointer"
@@ -55,7 +52,7 @@ export default function MobileMenus() {
                 )}
                 {/* --- FIN DE LA MODIFICACIÓN --- */}
 
-                {/* La lógica de los submenús queda idéntica */}
+                {/*lógica de los submenús queda idéntica */}
                 {menu.home_menus ? (
                   <div className="tp-submenu submenu tp-mega-menu" style={{ display: navTitle === menu.title ? "block" : "none"}}>
                     <div className="tp-menu-fullwidth">
