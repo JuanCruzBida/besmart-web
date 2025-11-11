@@ -31,14 +31,11 @@ const HomeFourMain = () => {
   }, []);
 
   useGSAP(() => {
-    // NOTA: No borramos las funciones de animación de aquí
-    // porque los componentes que SÍ MANTUVIMOS (como AboutThree,
-    // ProjectFour y el nuevo FooterFive) todavía las necesitan.
+
     const timer = setTimeout(() => {
       fadeAnimation();
       revelAnimationOne();
       projectThreeAnimation();
-      // ctaAnimation(); // 👈 ELIMINADO
       textInvert();
     }, 100);
     return () => clearTimeout(timer);
@@ -46,41 +43,30 @@ const HomeFourMain = () => {
 
   return (
     <Wrapper>
-      {/* header area start */}
+
       <HeaderFour />
-      {/* header area end */}
+
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            {/* hero area start */}
+
             <HeroBannerFour />
-            {/* hero area end */}
 
-            {/* gallery area start */}
             <GalleryOne />
-            {/* gallery area end */}
 
-            {/* about area start */}
             <AboutThree />
-            {/* about area end */}
 
-            {/* brand area start */}
             <BrandThree />
-            {/* brand area end */}
 
-            {/* project area start */}
             <ProjectFour />
-            {/* project area end */}
 
-            {/* counter area start (AQUÍ LO AGREGAMOS) */}
-                <CounterOne />
-            {/* counter area end */}
+            <CounterOne />
+
           </main>
 
-          {/* footer area */}
-          <FooterFive /> {/* 👈 AÑADIDO AQUÍ */}
-          {/* footer area */}
+          <FooterFive /> 
+
         </div>
       </div>
     </Wrapper>

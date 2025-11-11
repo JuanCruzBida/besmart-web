@@ -1,17 +1,16 @@
-import React from 'react';
 import { Metadata } from "next";
-import HomeFourMain from '@/pages/homes/home-4';
+import Home4 from './(homes)/home-4/page';
 
 export const metadata: Metadata = {
-  title: "Be Smart Technology",
+ title: "Be Smart Technology",
 };
 
-const HomePageFour = () => {
-  return (
-    <>
-    <HomeFourMain/>
-    </>
-  );
+const HomePage = () => {
+return (
+
+   <Home4 />
+
+ );
 }
 
-export default HomePageFour;
+export default HomePage;
