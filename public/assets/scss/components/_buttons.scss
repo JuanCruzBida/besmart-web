@@ -505,7 +505,7 @@
         position: relative;
         transition: all .3s;
         text-align: center;
-        font-size: 28px;
+        font-size: 32px;
         font-weight: 600;
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.90);
@@ -514,6 +514,9 @@
             background-color: var(--tp-common-white);
             border-color: var(--tp-common-white);
             color: var(--tp-common-black);
+        }
+        @media #{$xs} {
+            font-size: 25px;
         }
     }
     &-animation{
