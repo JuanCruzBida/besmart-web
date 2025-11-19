@@ -11,7 +11,7 @@ export default function HeroMembership() {
          <div 
            className="tp-showcase-details-bg d-flex align-items-center justify-content-center include-bg p-relative" 
            style={{backgroundImage: "url(/assets/img/inner-project/showcase/portada-member.png)",
-            backgroundSize: "1920px",
+            backgroundSize: "cover",
              backgroundPosition: "center",
              backgroundRepeat: "no-repeat",
            }}>
