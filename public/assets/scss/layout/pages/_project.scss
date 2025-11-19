@@ -869,6 +869,7 @@
         left: 0;
         height: 100vh;
         width: 100%;
+        
         & img{
             transform: scale(1.2);
             transition: 6s;
@@ -1338,7 +1339,7 @@
         &-bg {
             height: 100vh;
             width: 100%;
-            background-size: cover;
+            background-size: "cover";
             background-position: center;
         }
         &-active{

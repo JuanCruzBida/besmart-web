@@ -24,32 +24,46 @@ const slider_data = [
     title: "Beneficios <br> Exclusivos",
   },
   {
-    id: 2,
-    bg: "/assets/img/home-11/port-2.jpg",
+    id: 1,
+    bg: "/assets/img/home-11/port-sm-1.png",
     subtitle: "Membership",
 
-    title: "Beneficios <br> Exclusivos",
+    title: "VIP<br> Packages",
+  },
+  {
+    id: 2,
+    bg: "/assets/img/home-11/port-sm-2.png",
+    subtitle: "Membership",
+
+    title: "Lounge <br> VIP",
   },
   {
     id: 3,
-    bg: "/assets/img/home-11/port-3.jpg",
+    bg: "/assets/img/home-11/port-sm-3.png",
     subtitle: "Membership",
 
-    title: "Beneficios <br> Exclusivos",
+    title: "Pre venta <br> Exclusiva",
   },
   {
     id: 4,
-    bg: "/assets/img/home-11/port-4.jpg",
+    bg: "/assets/img/home-11/port-sm-4.png",
     subtitle: "Membership",
 
-    title: "Beneficios <br> Exclusivos",
+    title: "Descuentos <br> en merch",
   },
   {
     id: 5,
-    bg: "/assets/img/home-11/port-5.jpg",
+    bg: "/assets/img/home-11/port-sm-5.png",
     subtitle: "Membership",
 
-    title: "Beneficios <br> Exclusivos",
+    title: "Pruebas <br> de sonido",
+  },
+  {
+    id: 6,
+    bg: "/assets/img/home-11/port-sm-6.png",
+    subtitle: "Membership",
+
+    title: "Regalos <br> y sorpresas",
   },
 ];
 // slider thumbs
@@ -162,9 +176,24 @@ export default function PortfolioSliderHomeTen() {
   const [slider2, setSlider2] = useState<Slider | null>(null);
   const [sliderIndex, setSliderIndex] = useState<number>(1);
   const sliderRef = useRef<Slider | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      // Si el ancho es menor a 768px, es mobile
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Chequeamos al cargar
+    handleResize();
+    
+    // Y escuchamos si cambia el tamaño
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <div className="tp-portfolio-11-area fix" style={{ backgroundImage: `url(/assets/img/home-11/port-1.png)` }}>
+    <div className="tp-portfolio-11-area fix" style={{ backgroundImage: isMobile ? 'none' : `url(/assets/img/home-11/port-1.png)`}}>
       <div className="tp-portfolio-11-slider-wrap p-relative">
         <Slider
           {...slider_setting_one}
@@ -179,7 +208,7 @@ export default function PortfolioSliderHomeTen() {
             <div key={item.id}>
               <div
                 className="tp-portfolio-11-slider-bg pt-170 pb-150 d-flex align-items-end"
-                style={{ background: 'transparent' }}
+                style={{ background: isMobile ? `url(${item.bg})` : 'transparent', backgroundSize:"cover", backgroundPosition:"center", backgroundRepeat:"no-repeat"}}
               >
                 <div className="tp-portfolio-11-slider-content">
                   <div className="tp-portfolio-11-slider-link">

@@ -6,15 +6,17 @@
 .tp-section{
     &-title{
         font-weight: 500;
-        font-size: 40px;
+        font-size: 30px;
+        font-family: var(--tp-ff-marcellus);
         line-height: .9;
         color: var(--tp-common-black);
+        text-align: center;
         margin-bottom: 0;
         @media #{$lg}{
-            font-size: 40px;
+            font-size: 30px;
         }
         @media #{$md}{
-            font-size: 32px;
+            font-size: 30px;
         }
         @media #{$xs}{
             font-size: 20px;
@@ -22,7 +24,7 @@
         & span{
             font-weight: 400;
             color: var(--tp-common-black);
-            font-family: var(--tp-ff-gallery);
+            font-family: var(--tp-ff-body);
         }
         &.fs-160{
             font-size: 160px;
@@ -200,7 +202,7 @@
         font-family: var(--tp-ff-marcellus);
         margin-bottom: 25px;
         display: inline-block;
-        margin-left: 70px;
+        margin-left: -25px;
         @media #{$xs}{
             margin-left: 0;
         }

@@ -19,7 +19,7 @@ const project_data = [
     id: 1,
     img_1: port_1,
     img_2: port_2,
-    title: "Más que merch, tu linea de ropa con identidad",
+    title: "Más que merch, tu línea de productos con identidad",
     link: "/merch",
     btn_text: "BE SMART MERCH",
   },
@@ -64,7 +64,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
             <div className="col-xl-7">
               <div className="tp-project-3-title-box p-relative mb-150">
                 <h4 className="tp-section-title-200 tp_reveal_anim">
-                  Nuestros <span>Servicios</span>
+                <span>Servicios</span>
                 </h4>
                 
               </div>

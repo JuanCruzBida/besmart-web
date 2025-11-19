@@ -1,18 +1,20 @@
-// Archivo: src/components/hero/hero-membership.tsx
 "use client";
 import React from 'react';
 import Image from 'next/image';
 
-// Este es el componente del Hero que te gusta
+
 export default function HeroMembership() {
   
   return (
       <div className="tp-showcase-details-area">
-         {/* CLAVE: Corregí la URL de la imagen de fondo para que sea la del "World Fashion" */}
+
          <div 
            className="tp-showcase-details-bg d-flex align-items-center justify-content-center include-bg p-relative" 
-           style={{backgroundImage: "url(/assets/img/inner-project/showcase/portada-member.png)"}}
-         >
+           style={{backgroundImage: "url(/assets/img/inner-project/showcase/portada-member.png)",
+            backgroundSize: "1920px",
+             backgroundPosition: "center",
+             backgroundRepeat: "no-repeat",
+           }}>
           
 
 

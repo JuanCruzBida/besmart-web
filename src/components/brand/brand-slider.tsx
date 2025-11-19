@@ -21,12 +21,12 @@ export default function BrandSlider() {
   return (
     <div className="tp-brand-slider-active fix">
       <Marquee
-        speed={100}
+        speed={200}
         loop={0}
         className="brand-wrapper"
       >
         {brand_images.map((b, i) => (
-          <div key={i} className="tp-brand-item pl-50" style={{ height: "auto",width: "250px" }}>
+          <div key={i} className="tp-brand-item pl-50" style={{ height: "auto",width: "450px" }}>
             <Image src={b} alt="" />
           </div>
         ))}
