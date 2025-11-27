@@ -30,6 +30,17 @@ const ContactMain = () => {
       <HeaderFour />
       {/* header area end */}
 
+      <style jsx global>{`
+        @media (max-width: 420px) {
+          .tm-hero-title-big {
+            font-size: 45px !important; 
+            line-height: 1.1 !important;
+            word-wrap: break-word; /* Asegura que no se corte si es muy largo */
+          }
+        }
+      `}</style>
+      {/* ------------------------------------------------------------- */}
+
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div
@@ -47,9 +58,11 @@ const ContactMain = () => {
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
                         <span className="tm-hero-subtitle">Be Smart</span>
+                        
                         <h4 className="tm-hero-title-big tp-char-animation">
                           Contáctate con nosotros
                         </h4>
+
                       </div>
                     </div>
                   </div>
