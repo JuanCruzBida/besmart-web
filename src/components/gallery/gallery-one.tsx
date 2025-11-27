@@ -8,18 +8,20 @@ import shape_2 from '@/assets/img/home-03/gallery/gal-shape-2.png';
 import shape_d_2 from '@/assets/img/home-03/gallery/gal-shape-dark-2.png';
 import g_1 from '@/assets/img/home-03/gallery/gal-1.jpg';
 import g_2 from '@/assets/img/home-03/gallery/gal-2.jpg';
-import g_3 from '@/assets/img/home-03/gallery/gal-3.jpg';
-import g_4 from '@/assets/img/home-03/gallery/gal-4.jpg';
+import g_3 from '@/assets/img/home-03/gallery/gal-3.png';
+import g_4 from '@/assets/img/home-03/gallery/gal-4.png';
 import g_5 from '@/assets/img/home-03/gallery/gal-5.jpg';
 import g_6 from '@/assets/img/home-03/gallery/gal-6.jpg';
 import g_7 from '@/assets/img/home-03/gallery/gal-7.jpg';
 import g_8 from '@/assets/img/home-03/gallery/gal-8.jpg';
 import g_9 from '@/assets/img/home-03/gallery/gal-9.jpg';
 import g_10 from '@/assets/img/home-03/gallery/gal-10.jpg';
+import g_11 from '@/assets/img/home-03/gallery/gal-11.jpg';
+import g_12 from '@/assets/img/home-03/gallery/gal-12.jpg';
 
 
 const gallery_images = [
-  g_1, g_2, g_3, g_4, g_5, g_6, g_7, g_8, g_9, g_10
+  g_1, g_2, g_3, g_4, g_5, g_6, g_7, g_8, g_9, g_10, g_11, g_12
 ]
 
 const imgStyle:CSSProperties = {height: "auto"};

@@ -3,9 +3,9 @@ import Image from "next/image";
 
 import { ProjectShape, RightArrow } from "../svg";
 // images
-import port_1 from "@/assets/img/home-03/portfolio/port-1.jpg";
+import port_1 from "@/assets/img/home-03/portfolio/port-1.png";
 import port_2 from "@/assets/img/home-03/portfolio/port-2.jpg";
-import port_3 from "@/assets/img/home-03/portfolio/port-3.jpg";
+import port_3 from "@/assets/img/home-03/portfolio/port-3.png";
 import port_4 from "@/assets/img/home-03/portfolio/port-4.jpg";
 import port_5 from "@/assets/img/home-03/portfolio/port-5.jpg";
 import port_6 from "@/assets/img/home-03/portfolio/port-6.jpg";
