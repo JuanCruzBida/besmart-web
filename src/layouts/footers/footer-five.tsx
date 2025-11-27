@@ -1,5 +1,6 @@
 import React from "react";
 import { UpArrow } from "@/components/svg";
+import Image from "next/image";
 
 export default function FooterFive() {
   return (
@@ -21,7 +22,7 @@ export default function FooterFive() {
                   <a className="tp-footer-5-mail" href="mailto:comercial@besmart.technology">
                     comercial@besmart.technology
                   </a>
-                  <a className="tp-footer-5-link" href= "/contact">
+                  <a className="tp-footer-5-link" href="/contact">
                     <UpArrow clr="#19191A" />
                   </a>
                 </div>
@@ -36,18 +37,37 @@ export default function FooterFive() {
       <div className="tp-copyright-5-area tp-copyright-5-style-2 black-bg pb-50">
         <div className="container container-1560">
           <div className="row align-items-center">
+            
+            {/* Columna Izquierda: Dirección + Banderas */}
             <div className="col-xl-3 col-lg-6 col-md-5 d-none d-xl-block">
               <div className="tp-copyright-5-left-info">
                 <span>
                   <a
-                    href="https://www.google.com/maps/@40.1001598,-74.0544407,8.83z?entry=ttu"
+                    href="https://www.google.com/maps/search/31+NE+17th+Street.+Miami+FL+33132"
                     target="_blank"
                   >
-                    1101 Brickell Av. Floor 8th, Miami, Florida FL33131, US
+                    31 NE 17th Street. Miami FL 33132
                   </a>
                 </span>
+
+                {/* --- AGREGADO: Banderas --- */}
+                <div style={{ marginTop: '15px' }}>
+                  <Image 
+                    src="/assets/img/banderas.png" 
+                    alt="Banderas Regionales" 
+                    width={180} 
+                    height={40}
+                    style={{ 
+                      height: 'auto', 
+                      display: 'block' 
+                    }} 
+                  />
+                </div>
+                {/* -------------------------- */}
+
               </div>
             </div>
+
             <div className="col-xl-6 col-lg-6 col-md-7">
               <div className="tp-copyright-2-social text-start text-sm-center text-xl-center">
                 <a className="mb-10" href="https://www.linkedin.com/company/besmartllc/">

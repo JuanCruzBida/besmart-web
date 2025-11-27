@@ -9,7 +9,8 @@ import a_3 from "@/assets/img/home-01/award/award-1.png";
 import a_4 from "@/assets/img/home-01/award/award-1.png";
 import a_5 from "@/assets/img/home-01/award/award-1.png";
 import a_6 from "@/assets/img/home-01/award/award-1.png";
-import { Leaf } from "../svg";
+// AJUSTE: Importamos los brackets del About para usar en el título
+import { Leaf, FirstBracket, FirstBracketTwo } from "../svg";
 
 const award_data = [
   {
@@ -55,19 +56,41 @@ type IProps = {
   cls?: string;
   abStyle?: boolean;
 };
-const AwardOne = ({cls="pt-125 pb-125",abStyle=false}: IProps) => {
+
+const AwardOne = ({ cls = "pt-125 pb-125", abStyle = false }: IProps) => {
   const [activeThumb, setActiveThumb] = React.useState(1);
   return (
     <div className={`tp-award-area ${cls}`}>
       <div className="container container-1630">
         <div className="row justify-content-center">
-          <div className="col-xxl-6 col-xl-7">
+          {/* AJUSTE: Agregamos text-center para que el bloque de título se alinee igual que en About */}
+          <div className="col-xxl-6 col-xl-7 text-center">
             {!abStyle && (
-              <div className="tp-award-title-box">
-                <h4 className="tp-section-title tp-char-animation">
-                  VIP PASS<br /> <span>Eleva tu evento y potencia tus ingresos ofreciendo una experiencia de exclusividad y comodidad desde el primer momento.</span>
-                </h4>
+              // BLOQUE IMPORTADO DE ABOUT-THREE
+              <div className="tp-about-3-title-box">
+                <span className="tp-section-subtitle-2">
+                  <span>
+                    <FirstBracket />
+                  </span>
+                  <span className="tp-subtitle-text">
+                    VIP PASS
+                  </span>
+                  <span>
+                    <FirstBracketTwo />
+                  </span>
+                </span>
+<h4 
+        className="tp-section-title-90 pb-50" 
+        style={{ 
+          fontSize: 'clamp(18px, 2.5vw, 36px)', 
+          lineHeight: '1.3',
+          paddingTop: '15px' // Un poquito de aire arriba por si acaso
+        }}
+      >
+        Eleva tu evento y potencia tus ingresos ofreciendo una experiencia de exclusividad y comodidad desde el primer momento.
+      </h4>
               </div>
+              // FIN BLOQUE IMPORTADO
             )}
             {abStyle && (
               <div className="ab-award-title-sm">
