@@ -21,23 +21,24 @@ import marque_15 from '@/assets/img/home-05/marque/marque-15.jpg';
 import marque_16 from '@/assets/img/home-05/marque/marque-16.jpg';
 import marque_17 from '@/assets/img/home-05/marque/marque-17.jpg';
 
-// 1. Agrupamos las imágenes en un array para limpiar el código y facilitar el renderizado
-const marqueImages = [
+// 1. Array completo (para Desktop)
+const allImages = [
   marque_1, marque_2, marque_3, marque_4, marque_5, marque_6,
   marque_7, marque_8, marque_9, marque_10, marque_11, marque_12,
   marque_13, marque_14, marque_15, marque_16, marque_17
 ];
 
-// 2. Componente optimizado para Mobile
-function MarqueImage({ src }: { src: StaticImageData }) {
+// 2. Array reducido (para Mobile - Solo las primeras 8)
+const mobileImages = allImages.slice(0, 8);
+
+function MarqueImage({ src, priority = false }: { src: StaticImageData, priority?: boolean }) {
   return (
     <Image 
       src={src} 
       alt="marque-img" 
       style={{ height: 'auto' }} 
-      // FIX PERFORMANCE:
-      priority={true} // Carga inmediata, evita el parpadeo al entrar en pantalla
-      sizes="(max-width: 768px) 150px, 300px" // Descarga una versión más liviana en celular
+      priority={priority}
+      sizes="(max-width: 768px) 150px, 300px"
     />
   );
 }
@@ -50,24 +51,64 @@ export default function CounterOne() {
           <span></span>
         </div>
         
-        {/* Lado Izquierdo */}
+        {/* --- LADO IZQUIERDO --- */}
         <div className="slide-img-left">
-          <div className="box">
-            {marqueImages.map((img, i) => <MarqueImage key={`l-1-${i}`} src={img} />)}
+          
+          {/* Versión MOBILE (Solo 8 imágenes) - Se oculta en md (tablet/desktop) */}
+          <div className="box d-flex d-md-none">
+            {mobileImages.map((img, i) => (
+              <MarqueImage key={`m-l-1-${i}`} src={img} priority={true} />
+            ))}
           </div>
-          <div className="box">
-            {marqueImages.map((img, i) => <MarqueImage key={`l-2-${i}`} src={img} />)}
+          {/* Segunda caja para el loop infinito mobile */}
+          <div className="box d-flex d-md-none">
+            {mobileImages.map((img, i) => (
+              <MarqueImage key={`m-l-2-${i}`} src={img} priority={true} />
+            ))}
           </div>
+
+          {/* Versión DESKTOP (Todas las imágenes) - Se oculta en móviles */}
+          <div className="box d-none d-md-flex">
+            {allImages.map((img, i) => (
+              <MarqueImage key={`d-l-1-${i}`} src={img} priority={i < 8} />
+            ))}
+          </div>
+          {/* Segunda caja para el loop infinito desktop */}
+          <div className="box d-none d-md-flex">
+            {allImages.map((img, i) => (
+              <MarqueImage key={`d-l-2-${i}`} src={img} priority={false} />
+            ))}
+          </div>
+
         </div>
 
-        {/* Lado Derecho */}
+        {/* --- LADO DERECHO --- */}
         <div className="slide-img-right">
-          <div className="box">
-            {marqueImages.map((img, i) => <MarqueImage key={`r-1-${i}`} src={img} />)}
+          
+          {/* Versión MOBILE */}
+          <div className="box d-flex d-md-none">
+            {mobileImages.map((img, i) => (
+              <MarqueImage key={`m-r-1-${i}`} src={img} priority={true} />
+            ))}
           </div>
-          <div className="box">
-            {marqueImages.map((img, i) => <MarqueImage key={`r-2-${i}`} src={img} />)}
+          <div className="box d-flex d-md-none">
+            {mobileImages.map((img, i) => (
+              <MarqueImage key={`m-r-2-${i}`} src={img} priority={true} />
+            ))}
           </div>
+
+          {/* Versión DESKTOP */}
+          <div className="box d-none d-md-flex">
+            {allImages.map((img, i) => (
+              <MarqueImage key={`d-r-1-${i}`} src={img} priority={i < 8} />
+            ))}
+          </div>
+          <div className="box d-none d-md-flex">
+            {allImages.map((img, i) => (
+              <MarqueImage key={`d-r-2-${i}`} src={img} priority={false} />
+            ))}
+          </div>
+
         </div>
       </div>
 
@@ -78,7 +119,6 @@ export default function CounterOne() {
               {/* --- Item 1 --- */}
               <div className="col-xl-3 col-lg-3 col-md-3 mb-30">
                 <div className="slide-funfact-item text-center">
-                  {/* FIX VISUAL: Font-size reducido en mobile con clamp */}
                   <h4 style={{ fontSize: 'clamp(32px, 3vw, 50px)' }}>
                     <CounterItem min={0} max={20} />+
                   </h4>
