@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "home": "Home",
+    "membership": "Membership",
+    "merch": "Merchandise",
+    "contact": "Contacto"
+  },
+  "home": {
+    "hero": {
+      "title_line1": "BE SMART",
+      "title_line2": "UN ARTISTA. UN MUNDO",
+      "subtitle": "Conecta con tus fans a través de experiencias únicas.",
+      "button": "Contáctanos"
+    },
+    "about": {
+      "subtitle": "Sobre nosotros",
+      "title": "TUS FANS, MÁS CERCA QUE NUNCA, ESTÉS DONDE ESTÉS."
+    },
+    "services": {
+      "section_title": "Servicios",
+      "merch": {
+        "title": "Más que merch, tu línea de productos con identidad",
+        "button": "BE SMART MERCH"
+      },
+      "membership": {
+        "title": "Un mundo de beneficios para los más fieles",
+        "button": "BE SMART MEMBERSHIP"
+      },
+      "payments": {
+        "tag": "PRÓXIMAMENTE",
+        "title": "Tu propio sistema de pagos en todo el mundo, sin intermediarios",
+        "button": "BE SMART PAYMENTS"
+      },
+      "teams": {
+        "tag": "PRÓXIMAMENTE",
+        "title": "Tu propio equipo local para que todo funcione, vayas donde vayas",
+        "button": "BE SMART TEAMS"
+      }
+    },
+    "stats": {
+      "fans": "Millones de fans felices",
+      "concerts": "Conciertos con nuestro valor agregado",
+      "cities": "Ciudades con nuestros equipos regionales",
+      "experience": "años de experiencia en el mundo del entretenimiento"
+    }
+  },
+  "membership": {
+    "hero": {
+      "subtitle": "VIP PASS",
+      "title": "Eleva tu evento y potencia tus ingresos ofreciendo una experiencia de exclusividad y comodidad desde el primer momento."
+    },
+    "features": {
+      "1": "Fan ID digital integrado en la Wallet del teléfono para una experiencia rápida, segura y personalizada",
+      "2": "Optimiza y reduce los tiempos de espera",
+      "3": "Refuerza la presencia y percepción de tu marca",
+      "4": "Fideliza a tus clientes VIP con beneficios diferenciales",
+      "5": "Genera un código único para activar beneficios y accesos exclusivos",
+      "6": "Crea categorías de membresías según nivel de acceso"
+    },
+    "benefits_slider": {
+      "exclusive": "Beneficios <br> Exclusivos",
+      "packages": "VIP <br> Packages",
+      "lounge": "Lounge <br> VIP",
+      "presale": "Pre venta <br> Exclusiva",
+      "discounts": "Descuentos <br> en merch",
+      "soundcheck": "Pruebas <br> de sonido",
+      "gifts": "Regalos <br> y sorpresas"
+    }
+  },
+  "merch": {
+    "hero": {
+      "intro_title": "Somos locales, estés donde estés.",
+      "intro_subtitle": "Fabricación propia y venta local en todo el mundo."
+    },
+    "regions": {
+      "usa": "Estados Unidos",
+      "latam": "Latinoamérica",
+      "europe": "Europa",
+      "desc_placeholder_1": "Venta de merchandise oficial en giras de más de 30 ciudades con: Ricardo Arjona, Luis Miguel, Alejandro Sanz, Don Omar, Ana Gabriel, CMN (Christian Nodal, Aventura, Julión Álvarez, Chayanne, Anuel, Fonseca, Grupo Barak, J Balvin, Luis Alfonso, Marc Anthony, Manuel Turizo, Victor Manuelle), Zamora Live, Loud and Live.",
+      "desc_placeholder_2": "Venta de merchandise oficial en giras de más de 20 ciudades con: Ricardo Arjona, Luis Miguel, Alejandro Sanz, Chayanne, Don Omar, Fenix Entertainment.",
+      "desc_placeholder_3": "Venta de merchandise oficial en giras de más de 20 ciudades con: Ricardo Arjona, Luis Miguel, Alejandro Sanz."
+    },
+    "services_list": {
+      "design": {
+        "title": "Diseño y Desarrollo",
+        "desc": "Además del merchandising oficial, colaboramos estrechamente con el equipo del artista para desarrollar y potenciar su propia línea de indumentaria, cuidando cada detalle de estilo y autenticidad."
+      },
+      "manufacturing": {
+        "title": "Fabricación propia",
+        "desc": "Fabricación propia en Mexico, Chile, USA, Argentina y España con partner oficial en China para distribuir en todo el mundo."
+      },
+      "onsite": {
+        "title": "Venta on-site",
+        "desc": "Tu propio equipo local en todo el mundo para el armado de stand, conteo de mercadería, producción y gestión de ventas el día del show."
+      },
+      "online": {
+        "title": "Venta online",
+        "desc": "Desarrollamos tu propio store online con entrega puerta a puerta a tus fans en todo el mundo."
+      },
+      "support": {
+        "title": "Customer Service",
+        "desc": "Soporte y atención a usuarios, seguimiento de pedidos, gestión de consultas y devoluciones. Atención personalizada a todos tus clientes"
+      }
+    }
+  },
+  "contact": {
+    "hero_title": "Contáctate con nosotros",
+    "sidebar": {
+      "follow": "Seguinos",
+      "send_message": "Envíanos un mensaje",
+      "contact_us": "Contáctanos"
+    },
+    "form": {
+      "name": "Nombre",
+      "name_placeholder": "Tu Nombre",
+      "email": "Email",
+      "email_placeholder": "tu@email.com",
+      "message": "Mensaje",
+      "message_placeholder": "Déjanos un mensaje",
+      "btn_send": "Enviar Mensaje",
+      "btn_sending": "Enviando..."
+    }
+  },
+  "footer": {
+    "contact_subtitle": "Contáctanos",
+    "big_text": "Nosotros resolvemos en todo el mundo",
+    "address": "31 NE 17th Street. Miami FL 33132",
+    "rights": "Todos los derechos reservados"
+  }
+}

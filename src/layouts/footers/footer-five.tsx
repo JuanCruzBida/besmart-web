@@ -1,8 +1,12 @@
 import React from "react";
 import { UpArrow } from "@/components/svg";
 import Image from "next/image";
+import Link from "next/link"; // Importamos Link para navegación optimizada
 
-export default function FooterFive() {
+// 1. Recibimos 'lang' en las props
+export default function Footer({ dict, lang = "es" }: { dict: any; lang?: string }) {
+  const f = dict?.footer;
+
   return (
     <footer>
       <div className="tp-footer-5-area black-bg pt-120 pb-120">
@@ -12,19 +16,22 @@ export default function FooterFive() {
               <div className="tp-footer-5-content-wrap">
                 <div className="tp-footer-5-title-box">
                   <span className="tp-footer-5-subtitle">
-                    Contáctanos
+                    {f?.contact_subtitle || "Contáctanos"}
                   </span>
                   <h4 className="tp-footer-5-title tp_reveal_anim-2 footer-big-text">
-                    Nosotros resolvemos <br /> en todo el mundo
+                    {f?.big_text || "Nosotros resolvemos en todo el mundo"}
                   </h4>
                 </div>
                 <div className="tp-footer-5-info d-flex align-items-center justify-content-start justify-content-md-end">
                   <a className="tp-footer-5-mail" href="mailto:comercial@besmart.technology">
                     comercial@besmart.technology
                   </a>
-                  <a className="tp-footer-5-link" href="/contact">
+                  
+                  {/* 2. Link corregido con el idioma dinámico */}
+                  <Link className="tp-footer-5-link" href={`/${lang}/contact`}>
                     <UpArrow clr="#19191A" />
-                  </a>
+                  </Link>
+
                 </div>
               </div>
             </div>
@@ -46,11 +53,11 @@ export default function FooterFive() {
                     href="https://www.google.com/maps/search/31+NE+17th+Street.+Miami+FL+33132"
                     target="_blank"
                   >
-                    31 NE 17th Street. Miami FL 33132
+                    {f?.address || "31 NE 17th Street. Miami FL 33132"}
                   </a>
                 </span>
 
-                {/* --- AGREGADO: Banderas --- */}
+                {/* Banderas */}
                 <div style={{ marginTop: '15px' }}>
                   <Image 
                     src="/assets/img/banderas.png" 
@@ -63,7 +70,6 @@ export default function FooterFive() {
                     }} 
                   />
                 </div>
-                {/* -------------------------- */}
 
               </div>
             </div>
@@ -80,7 +86,7 @@ export default function FooterFive() {
             </div>
             <div className="col-xl-3 col-lg-6 col-md-5">
               <div className="tp-copyright-2-left text-center text-md-end">
-                <p>©{new Date().getFullYear()}- Todos los derechos reservados</p>
+                <p>©{new Date().getFullYear()} - {f?.rights || "Todos los derechos reservados"}</p>
               </div>
             </div>
           </div>

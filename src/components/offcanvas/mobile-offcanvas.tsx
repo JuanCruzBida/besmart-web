@@ -1,31 +1,35 @@
 import React from "react";
 import Image from "next/image";
-import { Behance, CloseTwo, Dribble, InstagramTwo, Youtube } from "../svg";
-
-// images
+import { CloseTwo } from "../svg"; // Asegurate que los imports coincidan con tu proyecto
 import logo from "@/assets/img/logo/logo.png";
 import MobileMenus from "./mobile-menus";
 
-
 // prop type
 type IProps = {
-  openOffcanvas: boolean;
-  setOpenOffcanvas: React.Dispatch<React.SetStateAction<boolean>>;
+  openOffCanvas: boolean; // Ojo: en HeaderFour lo llamamos openOffCanvas (con C mayúscula)
+  setOpenOffCanvas: React.Dispatch<React.SetStateAction<boolean>>;
+  dict: any; // <--- AGREGADO: Necesitamos el diccionario
+  lang?: string;
 };
 
-export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps) {
+export default function MobileOffcanvas({
+  openOffCanvas, 
+  setOpenOffCanvas, 
+  dict, // <--- Recibimos dict
+  lang = "es" 
+}: IProps) {
   return (
     <>
-      <div className={`tp-offcanvas-area ${openOffcanvas ? "opened" : ""}`}>
+      <div className={`tp-offcanvas-area ${openOffCanvas ? "opened" : ""}`}>
         <div className="tp-offcanvas-wrapper">
           <div className="tp-offcanvas-top d-flex align-items-center justify-content-between">
             <div className="tp-offcanvas-logo">
-                <Image src={logo} alt="logo" />
+              <Image src={logo} alt="logo" />
             </div>
             <div className="tp-offcanvas-close">
               <button
                 className="tp-offcanvas-close-btn"
-                onClick={() => setOpenOffcanvas(false)}
+                onClick={() => setOpenOffCanvas(false)}
               >
                 <CloseTwo />
               </button>
@@ -33,18 +37,19 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
           </div>
           <div className="tp-offcanvas-main">
             <div className="tp-offcanvas-content">
-              <h3 className="tp-offcanvas-title"></h3>
+              <h3 className="tp-offcanvas-title">Menu</h3>
             </div>
             <div className="tp-main-menu-mobile d-xl-none">
-              <MobileMenus/>
+              {/* CRÍTICO: Pasamos dict Y lang al componente de menús */}
+              <MobileMenus dict={dict} lang={lang} />
             </div>
           </div>
         </div>
       </div>
 
       <div
-        onClick={() => setOpenOffcanvas(false)}
-        className={`body-overlay ${openOffcanvas ? "opened" : ""}`}
+        onClick={() => setOpenOffCanvas(false)}
+        className={`body-overlay ${openOffCanvas ? "opened" : ""}`}
       ></div>
     </>
   );

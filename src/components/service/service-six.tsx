@@ -7,43 +7,47 @@ import ser_img_2 from "@/assets/img/inner-service/service/service-2.jpg";
 import ser_img_3 from "@/assets/img/inner-service/service/service-3.jpg";
 import ser_img_4 from "@/assets/img/inner-service/service/service-4.jpg";
 import ser_img_5 from "@/assets/img/inner-service/service/service-5.jpg";
-import { RightArrow, ShapeTwo } from "../svg";
-import Link from "next/link";
 
-const service_data = [
-  {
-    id: 1,
-    img: ser_img_1,
-    title: "Diseño y Desarrollo",
-    text: "Además del merchandising oficial, colaboramos estrechamente con el equipo del artista para desarrollar y potenciar su propia línea de indumentaria, cuidando cada detalle de estilo y autenticidad.",
-  },
-  {
-    id: 2,
-    img: ser_img_2,
-    title: "Fabricación propia",
-    text: "Fabricación propia en Mexico, Chile, USA, Argentina y España con partner oficial en China para distribuir en todo el mundo.",
-  },
-  {
-    id: 3,
-    img: ser_img_3,
-    title: "Venta on-site",
-    text: "Tu propio equipo local en todo el mundo para el armado de stand, conteo de mercadería, producción y gestión de ventas el día del show.",
-  },
-  {
-    id: 4,
-    img: ser_img_4,
-    title: "Venta online",
-    text: "Desarrollamos tu propio store online con entrega puerta a puerta a tus fans en todo el mundo.",
-  },
-   {
-    id: 5,
-    img: ser_img_5,
-    title: "Customer Service",
-    text: "Soporte y atención a usuarios, seguimiento de pedidos, gestión de consultas y devoluciones. Atención personalizada a todos tus clientes",
-  },
-];
+type Props = {
+  dict: any;
+}
 
-export default function ServiceSix() {
+export default function ServiceSix({ dict }: Props) {
+  
+  // Mapeamos los datos del JSON a las imágenes
+  const service_data = [
+    {
+      id: 1,
+      img: ser_img_1,
+      title: dict?.merch?.services_list?.design?.title || "Diseño y Desarrollo",
+      text: dict?.merch?.services_list?.design?.desc,
+    },
+    {
+      id: 2,
+      img: ser_img_2,
+      title: dict?.merch?.services_list?.manufacturing?.title || "Fabricación propia",
+      text: dict?.merch?.services_list?.manufacturing?.desc,
+    },
+    {
+      id: 3,
+      img: ser_img_3,
+      title: dict?.merch?.services_list?.onsite?.title || "Venta on-site",
+      text: dict?.merch?.services_list?.onsite?.desc,
+    },
+    {
+      id: 4,
+      img: ser_img_4,
+      title: dict?.merch?.services_list?.online?.title || "Venta online",
+      text: dict?.merch?.services_list?.online?.desc,
+    },
+    {
+      id: 5,
+      img: ser_img_5,
+      title: dict?.merch?.services_list?.support?.title || "Customer Service",
+      text: dict?.merch?.services_list?.support?.desc,
+    },
+  ];
+
   return (
     <div className="sv-service-area project-panel-area-2">
       <div className="container-fluid p-0">

@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "home": "Home",
+    "membership": "Membership",
+    "merch": "Merchandise",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title_line1": "BE SMART",
+      "title_line2": "ONE ARTIST. ONE WORLD",
+      "subtitle": "Connect with your fans through unique experiences.",
+      "button": "Contact us"
+    },
+    "about": {
+      "subtitle": "About Us",
+      "title": "Your fans, closer than ever, wherever you are."
+    },
+    "services": {
+      "section_title": "Services",
+      "merch": {
+        "title": "More than merch — your own identity-driven product line",
+        "button": "BE SMART MERCH"
+      },
+      "membership": {
+        "title": "A world of benefits for the most loyal fans",
+        "button": "BE SMART MEMBERSHIP"
+      },
+      "payments": {
+        "tag": "COMING SOON",
+        "title": "Your own global payment system, with no intermediaries",
+        "button": "BE SMART PAYMENTS"
+      },
+      "teams": {
+        "tag": "COMING SOON",
+        "title": "Your own local team to make everything run smoothly, wherever you go",
+        "button": "BE SMART TEAMS"
+      }
+    },
+    "stats": {
+      "fans": " Million happy fans",
+      "concerts": "Concerts enhanced with our added value",
+      "cities": "Cities with our regional teams",
+      "experience": "Years of experience in the entertainment industry"
+    }
+  },
+  "membership": {
+    "hero": {
+      "subtitle": "VIP PASS",
+      "title": "Elevate your event and boost your revenue by offering an exclusive and seamless experience from the very first moment."
+    },
+    "features": {
+      "1": "Digital Fan ID integrated into the phone’s Wallet for a fast, secure, and personalized experience",
+      "2": "Optimize and reduce wait times",
+      "3": "Strengthen your brand’s presence and perception",
+      "4": "Build loyalty with your VIP clients through differentiated benefits",
+      "5": "Generate a unique code to activate benefits and exclusive access",
+      "6": "Create membership tiers based on access levels"
+    },
+    "benefits_slider": {
+      "exclusive": "Exclusive <br> Benefits",
+      "packages": "VIP <br> Packages",
+      "lounge": "Lounge <br> VIP",
+      "presale": "Exclusive <br> Pre-Sale",
+      "discounts": "Merchandise <br> Discounts",
+      "soundcheck": "Soundcheck <br> Access",
+      "gifts": "Gifts <br> & Surprises"
+    }
+  },
+  "merch": {
+    "hero": {
+      "intro_title": "We are local, wherever you are.",
+      "intro_subtitle": "In-house production and local sales worldwide."
+    },
+    "regions": {
+      "usa": "United States",
+      "latam": "Latin America",
+      "europe": "Europe",
+      "desc_placeholder_1": "Official tour merchandise sales across 30+ cities with: Ricardo Arjona, Luis Miguel, Alejandro Sanz, Don Omar, Ana Gabriel, CMN (Christian Nodal, Aventura, Julión Álvarez, Chayanne, Anuel, Fonseca, Grupo Barak, J Balvin, Luis Alfonso, Marc Anthony, Manuel Turizo, Victor Manuelle), Zamora Live, Loud and Live.",
+      "desc_placeholder_2": "Official tour merchandise sales across 20+ cities with: Ricardo Arjona, Luis Miguel, Alejandro Sanz, Chayanne, Don Omar, Fenix Entertainment.",
+      "desc_placeholder_3": "Official tour merchandise sales across 20+ cities with: Ricardo Arjona, Luis Miguel, Alejandro Sanz."
+    },
+    "services_list": {
+      "design": {
+        "title": "Design & Development",
+        "desc": "In addition to official merchandising, we work closely with the artist’s team to develop and elevate their own apparel line, taking care of every detail of style and authenticity."
+      },
+      "manufacturing": {
+        "title": "In-House Manufacturing",
+        "desc": "In-house manufacturing in Mexico, Chile, the USA, Argentina, and Spain, with an official partner in China to distribute worldwide."
+      },
+      "onsite": {
+        "title": "On-site Sales",
+        "desc": "Your own local team worldwide to handle booth setup, inventory counting, production, and sales management on show day."
+      },
+      "online": {
+        "title": "Online Sales",
+        "desc": "We build your own online store with door-to-door delivery to your fans worldwide."
+      },
+      "support": {
+        "title": "Customer Service",
+        "desc": "User support and customer care, order tracking, and management of inquiries and returns. Personalized support for all your customers."
+      }
+    }
+  },
+  "contact": {
+    "hero_title": "Get in touch with us",
+    "sidebar": {
+      "follow": "Follow Us",
+      "send_message": "Send us a message",
+      "contact_us": "Contact us"
+    },
+    "form": {
+      "name": "Name",
+      "name_placeholder": "Your Name",
+      "email": "Email",
+      "email_placeholder": "your@email.com",
+      "message": "Message",
+      "message_placeholder": "Leave us a message",
+      "btn_send": "Send message",
+      "btn_sending": "Sending..."
+    }
+  },
+  "footer": {
+    "contact_subtitle": "Contact us",
+    "big_text": "We deliver solutions worldwide",
+    "address": "31 NE 17th Street. Miami FL 33132",
+    "rights": "All right reserved"
+  }
+}

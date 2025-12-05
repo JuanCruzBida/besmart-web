@@ -14,7 +14,13 @@ import ContactLocation from "@/components/contact/contact-location";
 // animation
 import { charAnimation } from "@/utils/title-animation";
 
-const ContactMain = () => {
+// 1. Definimos las props que recibe desde la página servidor [lang]
+type Props = {
+  dict: any;
+  lang: string;
+}
+
+const ContactMain = ({ dict, lang }: Props) => {
   useScrollSmooth();
 
   useGSAP(() => {
@@ -27,7 +33,8 @@ const ContactMain = () => {
   return (
     <Wrapper>
       {/* header area start */}
-      <HeaderFour />
+      {/* 2. Pasamos dict y lang al header para que funcione el menú */}
+      <HeaderFour dict={dict} lang={lang} />
       {/* header area end */}
 
       <style jsx global>{`
@@ -60,7 +67,8 @@ const ContactMain = () => {
                         <span className="tm-hero-subtitle">Be Smart</span>
                         
                         <h4 className="tm-hero-title-big tp-char-animation">
-                          Contáctate con nosotros
+                          {/* 3. Título traducido desde el JSON */}
+                          {dict?.contact?.hero_title || "Contáctate con nosotros"}
                         </h4>
 
                       </div>
@@ -71,7 +79,8 @@ const ContactMain = () => {
               {/* hero area end */}
 
               {/* contact area */}
-              <ContactTwo/>
+              {/* 4. Pasamos el dict al componente del formulario */}
+              <ContactTwo dict={dict} />
               {/* contact area */}
             </main>
           </div>

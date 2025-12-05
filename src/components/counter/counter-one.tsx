@@ -43,7 +43,12 @@ function MarqueImage({ src, priority = false }: { src: StaticImageData, priority
   );
 }
 
-export default function CounterOne() {
+// 3. Recibimos 'dict' en las props
+export default function CounterOne({ dict }: { dict: any }) {
+
+  // 4. Atajo a la sección de estadísticas
+  const s = dict?.home?.stats;
+
   return (
     <div className="slide-funfact-height slide-funfact p-relative d-flex align-items-center justify-content-center">
       <div className="img-marq slide-funfact-overlay">
@@ -122,7 +127,8 @@ export default function CounterOne() {
                   <h4 style={{ fontSize: 'clamp(32px, 3vw, 50px)' }}>
                     <CounterItem min={0} max={20} />+
                   </h4>
-                  <span>Millones de fans felices</span>
+                  {/* Fans */}
+                  <span>{s?.fans || "Millones de fans felices"}</span>
                 </div>
               </div>
               {/* --- Item 2 --- */}
@@ -131,7 +137,8 @@ export default function CounterOne() {
                   <h4 style={{ fontSize: 'clamp(32px, 3vw, 50px)' }}>
                     <CounterItem min={0} max={1000} />+
                   </h4>
-                  <span>Conciertos con nuestro valor agregado</span>
+                  {/* Concerts */}
+                  <span>{s?.concerts || "Conciertos con nuestro valor agregado"}</span>
                 </div>
               </div>
               {/* --- Item 3 --- */}
@@ -140,7 +147,8 @@ export default function CounterOne() {
                   <h4 style={{ fontSize: 'clamp(32px, 3vw, 50px)' }}>
                     <CounterItem min={0} max={200} />+
                   </h4>
-                  <span>Ciudades con nuestros equipos regionales </span>
+                  {/* Cities */}
+                  <span>{s?.cities || "Ciudades con nuestros equipos regionales"}</span>
                 </div>
               </div>
               {/* --- Item 4 --- */}
@@ -149,7 +157,8 @@ export default function CounterOne() {
                   <h4 style={{ fontSize: 'clamp(32px, 3vw, 50px)' }}>
                     <CounterItem min={0} max={15} />+
                   </h4>
-                  <span>años de experiencia en el mundo del entretenimiento</span>
+                  {/* Experience */}
+                  <span>{s?.experience || "años de experiencia en el mundo del entretenimiento"}</span>
                 </div>
               </div>
             </div>

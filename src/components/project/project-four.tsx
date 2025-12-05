@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
-
-import { ProjectShape, RightArrow } from "../svg";
+import Link from "next/link";
 // images
 import port_1 from "@/assets/img/home-03/portfolio/port-1.png";
 import port_2 from "@/assets/img/home-03/portfolio/port-2.jpg";
@@ -11,71 +10,78 @@ import port_5 from "@/assets/img/home-03/portfolio/port-5.jpg";
 import port_6 from "@/assets/img/home-03/portfolio/port-6.jpg";
 import port_7 from "@/assets/img/home-03/portfolio/port-7.png";
 import port_8 from "@/assets/img/home-03/portfolio/port-8.png";
-import Link from "next/link";
 
-// portfolio data
-const project_data = [
-  {
-    id: 1,
-    img_1: port_1,
-    img_2: port_2,
-    title: "Más que merch, tu línea de productos con identidad",
-    link: "/merch",
-    btn_text: "BE SMART MERCH",
-  },
-  {
-    id: 2,
-    img_1: port_3,
-    img_2: port_4,
-    title: "Un mundo de beneficios para los más fieles",
-    link: "/membership",
-    btn_text: "BE SMART MEMBERSHIP",
-  },
-  {
-    id: 3,
-    img_1: port_5,
-    img_2: port_6,
-    meta: "PRÓXIMAMENTE",
-    title: "Tu propio sistema de pagos en todo el mundo, sin intermediarios",
-    link: "#", // <-- MODIFICADO
-    btn_text: "BE SMART PAYMENTS", // <-- AGREGADO
-  },
-  {
-    id: 4,
-    img_1: port_7,
-    img_2: port_8,
-    meta: "PRÓXIMAMENTE",
-    title: "Tu propio equipo local para que todo funcione, vayas donde vayas",
-    link: "#", // <-- MODIFICADO
-    btn_text: "BE SMART TEAMS", // <-- AGREGADO
-  },
-];
-
-// prop type
 type IProps = {
   style_2?: boolean;
+  dict: any;
+  lang: string;
 };
-export default function ProjectFour({ style_2 = false }: IProps) {
+
+export default function ProjectFour({ style_2 = false, dict, lang }: IProps) {
+  
+  const s = dict?.home?.services;
+
+  const project_data = [
+    {
+      id: 1,
+      img_1: port_1,
+      img_2: port_2,
+      title: s?.merch?.title || "More than merch...",
+      link: `/${lang}/merch`,
+      btn_text: s?.merch?.button || "BE SMART MERCH",
+      meta: "", 
+    },
+    {
+      id: 2,
+      img_1: port_3,
+      img_2: port_4,
+      title: s?.membership?.title || "A world of benefits...",
+      link: `/${lang}/membership`,
+      btn_text: s?.membership?.button || "BE SMART MEMBERSHIP",
+      meta: "",
+    },
+    {
+      id: 3,
+      img_1: port_5,
+      img_2: port_6,
+      // RESTAURADO: Aquí vuelve el tag
+      meta: s?.payments?.tag || "COMING SOON", 
+      title: s?.payments?.title || "Your own global payment system...",
+      link: "#",
+      btn_text: s?.payments?.button || "BE SMART PAYMENTS",
+    },
+    {
+      id: 4,
+      img_1: port_7,
+      img_2: port_8,
+      // RESTAURADO: Aquí vuelve el tag
+      meta: s?.teams?.tag || "COMING SOON",
+      title: s?.teams?.title || "Your own local team...",
+      link: "#",
+      btn_text: s?.teams?.button || "BE SMART TEAMS",
+    },
+  ];
+
   return (
-    <div className={`tp-project-3-area ${style_2 ? "pt-60 pw-project-style" : "pt-130 black-bg"}`}>
+    // Mantenemos el centrado vertical (min-vh-100)
+    <div className={`tp-project-3-area ${style_2 ? "pt-60 pw-project-style" : "pt-130 black-bg"} min-vh-100 d-flex align-items-center`}>
       <div className="container container-1720">
         {!style_2 && (
           <div className="row justify-content-center">
             <div className="col-xl-7">
               <div className="tp-project-3-title-box p-relative mb-150">
                 <h4 className="tp-section-title-200 tp_reveal_anim">
-                <span>Servicios</span>
+                  <span>{s?.section_title || "Services"}</span>
                 </h4>
-                
               </div>
             </div>
           </div>
         )}
         <div className="row">
           <div className="col-xl-12">
-            {project_data.map((item, i) => (
+            {project_data.map((item) => (
               <div key={item.id} className="tp-project-3-wrap">
-                <div className="row">
+                <div className="row align-items-center">
                   <div className="col-xl-4 col-lg-4 col-md-6">
                     <div className="tp-project-3-thumb pro-img-1">
                       <Image
@@ -87,15 +93,18 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                   </div>
                   <div className="col-xl-4 col-lg-4 col-md-12 order-1 order-lg-0">
                     <div className="tp-project-3-content text-center">
-                      {<span className="tp-project-3-meta">{item.meta} </span>}
+                      
+                      {/* Aquí se renderiza el "COMING SOON" si existe */}
+                      {item.meta && <span className="tp-project-3-meta">{item.meta} </span>}
+                      
                       <h4 className="tp-project-3-title-sm">
                         <Link href={item.link}>{item.title}</Link>
                       </h4>
                       <Link
                         className="tp-btn-project-sm"
-                        href={item.link} // <-- MODIFICADO (usa el link de la data)
+                        href={item.link}
                       >
-                        {item.btn_text} {/* <-- MODIFICADO (usa btn_text o, si no existe, usa meta) */}
+                        {item.btn_text}
                       </Link>
                     </div>
                     <div className="tp-project-3-border color-1 text-center">

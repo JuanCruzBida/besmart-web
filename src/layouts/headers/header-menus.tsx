@@ -3,13 +3,45 @@ import Image from "next/image";
 import Link from "next/link";
 import menu_data from "@/data/menu-data";
 
-const imgStyle:CSSProperties = { width: "100%", height: "auto", objectFit: "cover" };
-const HeaderMenus = () => {
+const imgStyle: CSSProperties = { width: "100%", height: "auto", objectFit: "cover" };
+
+// 1. Recibimos dict y lang
+const HeaderMenus = ({ dict, lang }: { dict: any; lang: string }) => {
+
+  // --- HELPER 1: Construir rutas dinámicas ---
+  // Convierte "/membership" en "/es/membership" o "/en/membership"
+  const getRoute = (link: string) => {
+    // Ignoramos links externos o anclas
+    if (!link || link.startsWith("http") || link.startsWith("#")) return link;
+    // Caso especial para el home
+    if (link === "/") return `/${lang}`;
+    // Aseguramos que empiece con /
+    const cleanLink = link.startsWith('/') ? link : `/${link}`;
+    return `/${lang}${cleanLink}`;
+  };
+
+  // --- HELPER 2: Traducir títulos del menú principal ---
+  const getLabel = (menu: any) => {
+    const title = menu.title.toLowerCase().trim();
+    const n = dict?.nav;
+
+    if (!n) return menu.title;
+
+    if (title === 'home') return n.home || menu.title;
+    if (title === 'membership') return n.membership || menu.title;
+    if (title.includes('merch')) return n.merch || menu.title; // detecta 'merchandise' o 'merch'
+    if (title === 'contact' || title.includes('contacto')) return n.contact || menu.title;
+    
+    return menu.title;
+  };
+
   return (
     <ul>
       {menu_data.map((menu) => (
         <li key={menu.id} className="has-dropdown">
-          <Link href={menu.link}>{menu.title}</Link>
+          {/* APLICAMOS HELPERS AQUÍ */}
+          <Link href={getRoute(menu.link)}>{getLabel(menu)}</Link>
+          
           {menu.home_menus ? (
             <div className="tp-submenu submenu tp-mega-menu">
               <div className="tp-menu-fullwidth">
@@ -19,7 +51,8 @@ const HeaderMenus = () => {
                       <div key={i} className="col homemenu">
                         <div className="homemenu-thumb-wrap mb-20">
                           <div className="homemenu-thumb fix">
-                            <Link href={home_menu.link}>
+                            {/* APLICAMOS getRoute */}
+                            <Link href={getRoute(home_menu.link)}>
                               <Image src={home_menu.img} alt="home-img" width={251} height={235} 
                               style={imgStyle}/>
                             </Link>
@@ -27,7 +60,8 @@ const HeaderMenus = () => {
                         </div>
                         <div className="homemenu-content text-center">
                           <h4 className="homemenu-title">
-                            <Link href={home_menu.link}>{home_menu.title}</Link>
+                            {/* APLICAMOS getRoute */}
+                            <Link href={getRoute(home_menu.link)}>{home_menu.title}</Link>
                           </h4>
                         </div>
                       </div>
@@ -51,9 +85,10 @@ const HeaderMenus = () => {
                             <div className="tp-megamenu-list-wrap">
                               <ul>
                                 {menu.pages_mega_menu.first.submenus.map(
-                                  (psm,i) => (
+                                  (psm, i) => (
                                     <li key={i}>
-                                      <Link href={psm.link}>{psm.title}</Link>
+                                      {/* APLICAMOS getRoute */}
+                                      <Link href={getRoute(psm.link)}>{psm.title}</Link>
                                     </li>
                                   )
                                 )}
@@ -69,9 +104,10 @@ const HeaderMenus = () => {
                             <div className="tp-megamenu-list-wrap">
                               <ul>
                                 {menu.pages_mega_menu.second.submenus.map(
-                                  (psm,i) => (
+                                  (psm, i) => (
                                     <li key={i}>
-                                      <Link href={psm.link}>{psm.title}</Link>
+                                      {/* APLICAMOS getRoute */}
+                                      <Link href={getRoute(psm.link)}>{psm.title}</Link>
                                     </li>
                                   )
                                 )}
@@ -97,7 +133,8 @@ const HeaderMenus = () => {
                         <div className="tp-shop-banner-content">
                           <h4 className="tp-shop-banner-title">Sale</h4>
                           <span>20% Off all Shoes</span>
-                          <Link className="tp-shop-btn" href="/shop">
+                          {/* APLICAMOS getRoute */}
+                          <Link className="tp-shop-btn" href={getRoute("/shop")}>
                             Shop Now
                           </Link>
                         </div>
@@ -137,7 +174,8 @@ const HeaderMenus = () => {
                                         <ul>
                                           {portSm.menu_lists.map((psm) => (
                                             <li key={psm.title}>
-                                              <Link href={psm.link}>
+                                              {/* APLICAMOS getRoute */}
+                                              <Link href={getRoute(psm.link)}>
                                                 {psm.title}
                                               </Link>
                                             </li>
@@ -162,7 +200,8 @@ const HeaderMenus = () => {
                                     <ul>
                                       {portSm2.menu_lists.map((psm) => (
                                         <li key={psm.title}>
-                                          <Link href={psm.link}>
+                                          {/* APLICAMOS getRoute */}
+                                          <Link href={getRoute(psm.link)}>
                                             {psm.title}
                                           </Link>
                                         </li>
@@ -190,7 +229,8 @@ const HeaderMenus = () => {
             <ul className="tp-submenu submenu">
               {menu.dropdown_menus.map((mm, i) => (
                 <li key={i}>
-                  <Link href={mm.link}>{mm.title}</Link>
+                  {/* APLICAMOS getRoute */}
+                  <Link href={getRoute(mm.link)}>{mm.title}</Link>
                 </li>
               ))}
             </ul>

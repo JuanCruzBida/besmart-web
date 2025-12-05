@@ -2,12 +2,13 @@
 import React from 'react';
 import Image from 'next/image';
 
-export default function HeroMerch() {
+// --- CAMBIO 1: Recibimos dict ---
+export default function HeroMerch({ dict }: { dict: any }) {
   
   return (
       <div className="tp-showcase-details-area">
          
-         {/* FIX MOBILE: Ajuste para que Merchandise no se rompa en < 420px */}
+         {/* FIX MOBILE: Tus estilos originales conservados */}
          <style jsx global>{`
             @media (max-width: 420px) {
               .port-showcase-slider-title {
@@ -27,15 +28,18 @@ export default function HeroMerch() {
               <div className="row">
                 <div className="col-12">
                     <div className="tp-showcase-details-content text-center">
+                      
+                      {/* --- CORRECCIÓN AQUÍ: Quitamos la referencia a membership --- */}
                       <span className="port-showcase-slider-subtitle tp_title_anim">
-                        [ Be Smart ]
+                        [ BE SMART ]
                       </span>
 
+                      {/* Título: "Merchandise" (o lo que venga en el dict) */}
                       <h4 
                         className="port-showcase-slider-title tp-char-animation"
                         style={{ letterSpacing: "calc(-0.5vw)" }}
                       >
-                        Merchandise
+                        {dict?.nav?.merch || "Merchandise"}
                       </h4>
                     </div>
                 </div>

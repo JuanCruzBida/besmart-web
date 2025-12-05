@@ -20,8 +20,8 @@ import { fadeAnimation, revelAnimationOne } from "@/utils/title-animation";
 import { projectThreeAnimation } from "@/utils/project-anim";
 import CounterOne from "@/components/counter/counter-one";
 
-
-const HomeFourMain = () => {
+// --- CAMBIO 1: Recibimos dict ---
+const HomeFourMain = ({ dict, lang }: { dict: any; lang: string }) => {
   useScrollSmooth();
   useEffect(() => {
     document.body.classList.add("tp-smooth-scroll");
@@ -31,7 +31,6 @@ const HomeFourMain = () => {
   }, []);
 
   useGSAP(() => {
-
     const timer = setTimeout(() => {
       fadeAnimation();
       revelAnimationOne();
@@ -43,30 +42,28 @@ const HomeFourMain = () => {
 
   return (
     <Wrapper>
-
-      <HeaderFour />
-
+      {/* --- CAMBIO 2: Pasamos dict al Header --- */}
+      <HeaderFour dict={dict} lang={lang} />
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-
-            <HeroBannerFour />
+            {/* --- CAMBIO 3: Pasamos dict a todas las secciones --- */}
+            <HeroBannerFour dict={dict} lang={lang} />
 
             <GalleryOne />
 
-            <AboutThree />
+            <AboutThree dict={dict} />
 
             <BrandThree />
 
-            <ProjectFour />
+            <ProjectFour dict={dict} lang={lang} />
 
-            <CounterOne />
-
+            <CounterOne dict={dict} />
           </main>
 
-          <FooterFive /> 
-
+          {/* --- CAMBIO 4: Pasamos dict al Footer --- */}
+          <FooterFive dict={dict} lang={lang} /> 
         </div>
       </div>
     </Wrapper>

@@ -6,29 +6,37 @@ import s_1 from "@/assets/img/home-01/service/service-icon-1.png";
 import s_2 from "@/assets/img/home-01/service/service-icon-2.png";
 import s_3 from "@/assets/img/home-01/service/service-icon-3.png";
 
-const service_data = [
-  {
-    id: 1,
-    title: "Estados Unidos",
-    desc: "Branding is one of the most important ingredients for the success of any business.",
-    icon: s_3,
-  },
-  {
-    id: 2,
-    title: "Latinoamérica",
-    desc: "The perfect cocktail should still look and taste perfect no matter the size of the glass you serve it in.",
-    icon: s_1,
-  },
-  {
-    id: 3,
-    title: "Europa",
-    desc: "We take that same approach with the apps & websites we create. you go there because of the overall experience.",
-    icon: s_2,
-  },
-];
+// Definimos las props que va a recibir
+type Props = {
+  dict: any;
+  lang: string;
+}
 
 // service items
-export function ServiceItems() {
+export function ServiceItems({ dict, lang }: Props) {
+  
+  // Construimos la data dinámicamente usando el diccionario
+  const service_data = [
+    {
+      id: 1,
+      title: dict?.merch?.regions?.usa || "Estados Unidos",
+      desc: dict?.merch?.regions?.desc_placeholder_1 || "Branding description...",
+      icon: s_3,
+    },
+    {
+      id: 2,
+      title: dict?.merch?.regions?.latam || "Latinoamérica",
+      desc: dict?.merch?.regions?.desc_placeholder_2 || "Cocktail description...",
+      icon: s_1,
+    },
+    {
+      id: 3,
+      title: dict?.merch?.regions?.europe || "Europa",
+      desc: dict?.merch?.regions?.desc_placeholder_3 || "App description...",
+      icon: s_2,
+    },
+  ];
+
   return (
     <div className="row">
       <div className="col-xxl-3"></div>
@@ -40,7 +48,8 @@ export function ServiceItems() {
             </div>
             <div className="tp-service-4-content">
               <h4 className="tp-service-4-title-sm tp-text-black">
-                <Link href="/service">{item.title}</Link>
+                {/* Usamos 'lang' para construir el link correctamente, ej: /es/service */}
+                <span style={{ cursor: 'default' }}>{item.title}</span>
               </h4>
               <p>{item.desc}</p>
             </div>
@@ -51,8 +60,8 @@ export function ServiceItems() {
   );
 }
 
-// service five area
-export default function ServiceFive() {
+// service five area (Export por defecto, también lo actualizamos por si se usa en otro lado)
+export default function ServiceFive({ dict, lang }: Props) {
   return (
     <div className="tp-service-5-area pt-120 pb-70">
       <div className="container container-1775">
@@ -64,14 +73,13 @@ export default function ServiceFive() {
                   SERVICES
                 </span>
                 <span className="text-space"></span>
-                Nullam posuere rhoncus elementum. Nullam lacinia <br />
-                urna blandit iaculis sagittis
+                {dict?.merch?.hero?.intro_subtitle}
               </h4>
             </div>
           </div>
         </div>
         <div className="tp-service-5-wrap">
-          <ServiceItems/>
+          <ServiceItems dict={dict} lang={lang} />
         </div>
       </div>
     </div>

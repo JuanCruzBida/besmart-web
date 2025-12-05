@@ -1,16 +1,5 @@
-import { Metadata } from "next";
-import Home4 from './(homes)/home-4/page';
+import { redirect } from 'next/navigation';
 
-export const metadata: Metadata = {
- title: "Be Smart Technology",
-};
-
-const HomePage = () => {
-return (
-
-   <Home4 />
-
- );
+export default function RootPage() {
+  redirect('/es');
 }
-
-export default HomePage;
