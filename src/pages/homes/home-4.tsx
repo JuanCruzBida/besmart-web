@@ -19,6 +19,7 @@ import { textInvert } from "@/utils/text-invert";
 import { fadeAnimation, revelAnimationOne } from "@/utils/title-animation";
 import { projectThreeAnimation } from "@/utils/project-anim";
 import CounterOne from "@/components/counter/counter-one";
+import HomeVideo from "@/components/video-banner/home-video";
 
 // --- CAMBIO 1: Recibimos dict ---
 const HomeFourMain = ({ dict, lang }: { dict: any; lang: string }) => {
@@ -56,6 +57,8 @@ const HomeFourMain = ({ dict, lang }: { dict: any; lang: string }) => {
             <AboutThree dict={dict} />
 
             <BrandThree />
+
+            <HomeVideo />
 
             <ProjectFour dict={dict} lang={lang} />
 
