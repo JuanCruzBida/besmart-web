@@ -62,21 +62,21 @@ const VideoModal = ({ isOpen, setIsOpen, videoUrl }: VideoModalProps) => {
           ✖ CERRAR
         </button>
 
-        <iframe
-          src={`${videoUrl}&autoplay=1`} 
-          allow="autoplay; fullscreen; encrypted-media"
-          allowFullScreen
-          style={{
-            width: '100%',
-            height: '100%',
-            border: 'none',
-            borderRadius: '8px',
-            backgroundColor: '#000'
-          }}
-        ></iframe>
+<iframe
+  src={`${videoUrl}&autoplay=true`} 
+  allow="autoplay; fullscreen; encrypted-media"
+  allowFullScreen
+  style={{
+    width: '100%',
+    height: '100%',
+    border: 'none',
+    borderRadius: '8px',
+    backgroundColor: '#000'
+  }}
+></iframe>
       </div>
     </div>,
-    document.body // Esto lo saca del lío de GSAP y lo manda al final del HTML
+    document.body 
   );
 };
 
