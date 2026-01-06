@@ -23,7 +23,7 @@ const HomeVideo = () => {
                    o cambia el src por una que ya tengas en public/assets/img/ 
                 */}
                 <Image 
-                  src="/assets/img//home-04/about/portada-video.png" 
+                  src="/assets/img/home-04/about/portada-video.png" 
                   alt="Be Smart Institutional Video"
                   width={1280}
                   height={720}
