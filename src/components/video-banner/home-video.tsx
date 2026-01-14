@@ -7,7 +7,7 @@ const HomeVideo = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   // AQUÍ PEGA EL LINK DE CLOUDINARY QUE ME MOSTRASTE ANTES
-  const VIDEO_URL = "https://player.cloudinary.com/embed/?cloud_name=dddui79c6&public_id=Be_Smart_Reel_v4_1_gaz4vj&muted=true";
+  const VIDEO_URL = "https://player.cloudinary.com/embed/?cloud_name=dddui79c6&public_id=Be_Smart_Final_-INGLES_v2_1_hjxqbs&muted=true";
 
   return (
     <>
